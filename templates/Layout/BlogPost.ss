@@ -1,23 +1,22 @@
-<div class="container">
-	<div class="row">
-        <div class="<% if $SideBarView %>col-sm-9<% else %>col-sm-12<% end_if %>">
-            <article>
-                <h1>$Title</h1>
+<div class="row">
+    <div class="column">
+        <article>
+            <h1>$Title</h1>
 
-				<% if $FeaturedImage %>
-                    <p class="post-image">$FeaturedImage.setWidth(795)</p>
-				<% end_if %>
+            <% if $FeaturedImage %>
+                <img class="article-image" data-interchange="[{$FeaturedImage.Url}, small]"
+                     alt="">
+            <% end_if %>
 
-                <div class="content">$Content</div>
+            {$Content}
 
-				<% include EntryMeta %>
-            </article>
+            <% include EntryMeta %>
+        </article>
 
-			$Form
-			$CommentsForm
-        </div>
+        {$Form}
+        {$CommentsForm}
+    </div>
 
-		<% include BlogSideBar %>
-	</div>
+    <% include BlogSideBar %>
 </div>
 
