@@ -28,13 +28,16 @@
                         <% end_if %>
                     </li>
                 <% end_loop %>
-            </ul>
-        </div>
-        <div class="top-bar-right">
-            <ul class="menu">
-                <li><input type="search" placeholder="Search"></li>
+
                 <li>
-                    <button type="button" class="button">Search</button>
+                    <a href="#">
+                        Search
+                    </a>
+                    <ul class="menu vertical">
+                        <li>
+                            <% include SearchFormInline %>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

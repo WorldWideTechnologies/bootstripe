@@ -1,0 +1,19 @@
+.top-bar {
+  .menu {
+    .is-dropdown-submenu {
+      top: 100%;
+      left: 0;
+      .input-group {
+        margin: rem-calc(10px);
+        .input-group-field {
+          margin-right: 0;
+        }
+        .input-group-button {
+          input {
+            margin-right: rem-calc(25px);
+          }
+        }
+      }
+    }
+  }
+}
