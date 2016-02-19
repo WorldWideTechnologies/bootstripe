@@ -1,0 +1,29 @@
+// ============================================================================
+// Gallery Stylesheet
+// ============================================================================
+
+.lg-backdrop {
+  //background-color: ;
+}
+
+.lg-progress-bar {
+  .lg-progress {
+    // background-color: ;
+  }
+}
+
+.lg-toolbar {
+  // background-color: ;
+}
+
+.lg-outer {
+  .lg-thumb-item {
+    border: 0;
+    border-radius: 0;
+    opacity: 0.5;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

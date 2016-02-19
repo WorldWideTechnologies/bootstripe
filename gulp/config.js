@@ -31,11 +31,14 @@ var files = {
     ],
     vend_stylesheets: [
         config.bower + '/Avail/dist/stylesheets/avail.css',
+        config.bower + '/lightgallery/dist/css/lightgallery.css',
+        config.bower + '/lightgallery/dist/css/lg-transitions.css',
         config.bower + '/font-awesome/css/font-awesome.css'
     ],
     vend_javascripts: [
         config.bower + '/jquery/dist/jquery.js',
         config.bower + '/foundation-sites/dist/foundation.js',
+        config.bower + '/lightgallery/dist/js/lightgallery-all.js',
         config.bower + '/gmaps/gmaps.js'
     ]
 };
