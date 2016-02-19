@@ -10,3 +10,5 @@ try {
 catch (e) {
     window.attachEvent("onload", $buo_f)
 }
+
+$(document).foundation();

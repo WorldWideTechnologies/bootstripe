@@ -26,9 +26,11 @@ var files = {
     src_fonts:        [
         './src/fonts/**/*',
         config.bower + '/font-awesome/fonts/**/*',
-        config.bower + '/open-iconic/font/fonts/**/*'
+        config.bower + '/open-iconic/font/fonts/**/*',
+        config.bower + '/lightgallery/dist/fonts/**/*'
     ],
     vend_stylesheets: [
+        config.bower + '/Avail/dist/stylesheets/avail.css',
         config.bower + '/font-awesome/css/font-awesome.css'
     ],
     vend_javascripts: [

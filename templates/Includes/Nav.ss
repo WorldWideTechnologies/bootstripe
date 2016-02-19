@@ -1,56 +1,42 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+</div>
 
-            <a class="navbar-brand" href="/">
-                BRAND
-            </a>
-        </div>
+<div class="top-bar" id="example-menu">
+    <div class="row">
+        <div class="top-bar-left">
+            <ul class="vertical medium-horizontal dropdown menu" data-dropdown-menu>
 
-        <div id="navPrimary" class="navbar-collapse collapse">
-            <% if $Menu(1) %>
-                <ul class="nav navbar-nav navbar-right">
-                    <% loop $Menu(1) %>
-                        <li class="$LinkingMode <% if $Children %>dropdown<% end_if %>">
-                            <% if not $Children || $HideChildrenFromNavigation  %>
-                                <a href="$Link" title="$Title.XML" {$MenuTarget}>$MenuTitle.XML</a>
-                            <% else %>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="$Title.XML">
-                                    $MenuTitle.XML <i class="fa fa-chevron-down"></i>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <% if $ShowInDropdownIfParent && $LinkingMode == 'section' && $ClassName != 'RedirectorPage' %>
-                                        <li class="link"><a href="$Link" title="$Title.XML" {$MenuTarget}>$MenuTitle.XML</a></li>
-                                    <% else_if $ShowInDropdownIfParent && $ClassName != 'RedirectorPage' %>
-                                        <li class="$LinkingMode"><a href="$Link" title="$Title.XML" {$MenuTarget}>$MenuTitle.XML</a>
-                                        </li>
-                                    <% end_if %>
+                <li class="menu-text">BRAND</li>
 
-                                    <% loop $Children %>
-                                        <li class="$LinkingMode"><a href="$Link" title="$Title.XML" {$MenuTarget}>$MenuTitle.XML</a>
-                                        </li>
-                                    <% end_loop %>
-                                </ul>
-                            <% end_if %>
-                        </li>
-                    <% end_loop %>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-search"></i>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <% include SearchFormInline %>
-                            </li>
-                        </ul>
+                <% loop $Menu(1) %>
+                    <li class="$LinkingMode">
+                        <% if not $Children || $HideChildrenFromNavigation  %>
+                            <a href="$Link" title="$Title.XML" {$MenuTarget}>$MenuTitle.XML</a>
+                        <% else %>
+                            <a href="#" title="$Title.XML">
+                                $MenuTitle.XML
+                            </a>
+                            <ul class="menu vertical">
+                                <% loop $Children %>
+                                    <li class="$LinkingMode"><a href="$Link"
+                                                                title="$Title.XML" {$MenuTarget}>$MenuTitle.XML</a>
+                                    </li>
+                                <% end_loop %>
+                            </ul>
+                        <% end_if %>
                     </li>
-                </ul>
-            <% end_if %>
+                <% end_loop %>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li><input type="search" placeholder="Search"></li>
+                <li>
+                    <button type="button" class="button">Search</button>
+                </li>
+            </ul>
         </div>
     </div>
-</nav>
+</div>

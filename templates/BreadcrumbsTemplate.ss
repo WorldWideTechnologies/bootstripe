@@ -1,5 +1,5 @@
 <% if $Pages %>
-    <ol class="list-unstyled list-inline">
+    <ol>
         <% loop $Pages %>
             <% if $Last %>
                 <li><a href="$Link">$MenuTitle.XML</a></li>

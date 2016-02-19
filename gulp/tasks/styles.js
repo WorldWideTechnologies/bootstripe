@@ -16,7 +16,7 @@ module.exports = function () {
         .pipe(sass({
             outputStyle:     'expanded',
             precision:       10,
-            includePaths: path.join(config.bower, '/foundation-sites/scss'),
+            includePaths: config.bower,
             errLogToConsole: true
         }));
     //.pipe(autoprefixer(config.autoprefix));
