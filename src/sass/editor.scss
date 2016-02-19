@@ -1,33 +1,13 @@
-// ============================================================================
-// Editor Stylesheet
-//
-// Defines how styles appear in the CMS
-// ============================================================================
-// Imports
-// ----------------------------------------------------------------------------
-// Site specific variables
-@import 'global';
-// Site typography
-@import 'typography';
+@import "foundation-sites/scss/foundation";
 
+@include foundation-typography;
+@import "typography";
 
-
-// Overrides
-// ----------------------------------------------------------------------------
-
-// TinyMCE body
 body.mceContentBody {
+  font-family: $body-font-family;
+  font-size: $global-font-size;
+  color: $body-font-color;
 
-  /* NEED TO ADD PORSE STYLE EDITOR */
-
-  // Import the style definitions here so they don't populate the TinyMCE
-  // style selector
-
-  td {
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-  }
-
+  @include foundation-typography;
+  @import "typography";
 }
