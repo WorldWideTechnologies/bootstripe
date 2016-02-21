@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             $Content
             <% if $Query %>
-                <% include SiteSearch Value=$Query %>
+                <% include SearchFormInline Value=$Query %>
                 <h4>Showing: $Results.FirstItem - $Results.LastItem  of $Results.getTotalItems results.</h4>
                 <hr>
             <% end_if %>

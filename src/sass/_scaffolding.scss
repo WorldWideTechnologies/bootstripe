@@ -1,0 +1,32 @@
+
+
+.strong, .highlight {
+  font-weight: bold;
+}
+
+.overlay {
+  position: relative;
+  &:before {
+    content: '';
+    transition: opacity ease 500ms;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0;
+  }
+  &:hover, &:active, &:focus {
+    &:before {
+      opacity: .5;
+    }
+  }
+}
+
+.map {
+  min-height: 200px;
+  @media (min-width: $screen-sm-min) {
+    min-height: 400px;
+  }
+}
