@@ -5013,6 +5013,34 @@ a:hover, a:focus, a:active {
   white-space: nowrap;
 }
 
+.strong, .highlight {
+  font-weight: bold;
+}
+
+.overlay {
+  position: relative;
+}
+
+.overlay:before {
+  content: '';
+  transition: opacity ease 500ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0;
+}
+
+.overlay:hover:before, .overlay:active:before, .overlay:focus:before {
+  opacity: .5;
+}
+
+.map {
+  min-height: 200px;
+}
+
 .top-bar .menu .is-dropdown-submenu {
   top: 100%;
   left: 0;

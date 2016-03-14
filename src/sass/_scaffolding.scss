@@ -26,7 +26,4 @@
 
 .map {
   min-height: 200px;
-  @media (min-width: $screen-sm-min) {
-    min-height: 400px;
-  }
 }

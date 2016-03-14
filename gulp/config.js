@@ -6,6 +6,7 @@ var config = {
     // Vendors
     vend_main_css:    'vendor.css',
     vend_main_js:     'vendor.js',
+    vend_main_cdn_js: 'vendor-cdn.js',
     // Destination Config
     dist_fonts:       './public/fonts/',                            // Destination Fonts Directory
     dist_images:      './public/images/',                           // Destination Images Directory
@@ -35,17 +36,17 @@ var files = {
         config.bower + '/lightgallery/dist/css/lg-transitions.css',
         config.bower + '/font-awesome/css/font-awesome.css'
     ],
-    vend_javascripts: [
-        config.bower + '/jquery/dist/jquery.js',
-        config.bower + '/foundation-sites/dist/foundation.js',
-        config.bower + '/lightgallery/dist/js/lightgallery-all.js',
-        config.bower + '/gmaps/gmaps.js'
-    ]
+    vend_javascripts: {
+        jquery:       config.bower + '/jquery/dist/jquery.js',
+        foundation:   config.bower + '/foundation-sites/dist/foundation.js',
+        lightgallery: config.bower + '/lightgallery/dist/js/lightgallery-all.js',
+        gmaps:        config.bower + '/gmaps/gmaps.js'
+    }
 };
 
 var clean_paths = [config.dist_fonts, config.dist_images, config.dist_javascripts, config.dist_stylesheets];
 
-config.files = files;
+config.files       = files;
 config.clean_paths = clean_paths;
 
 module.exports = config;

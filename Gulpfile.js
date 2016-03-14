@@ -28,9 +28,17 @@ gulp.task('watch', function () {
         port:  4000
     });
     gulp.watch(path.join(config.src_stylesheets, '/**/*.scss'), gulp.series('styles'));
-    gulp.watch(path.join(config.src_javascripts, '/**/*.js'), gulp.series('scripts'));
 });
 
+
+gulp.task('build', function () {
+    return buildScript('main.js', false);
+});
+
+
+gulp.task('default', ['build'], function () {
+    return buildScript('main.js', true);
+});
 
 gulp.task('build', gulp.series(
     'bower',
