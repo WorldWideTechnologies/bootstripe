@@ -8,6 +8,7 @@ var config = {
     vend_main_js:     'vendor.js',
     vend_main_cdn_js: 'vendor-cdn.js',
     // Destination Config
+    dist_main_js:     'app.js',
     dist_fonts:       './public/fonts/',                            // Destination Fonts Directory
     dist_images:      './public/images/',                           // Destination Images Directory
     dist_javascripts: './public/javascript/',                       // Destination Javascripts Directory
@@ -48,5 +49,13 @@ var clean_paths = [config.dist_fonts, config.dist_images, config.dist_javascript
 
 config.files       = files;
 config.clean_paths = clean_paths;
+
+var shim = {};
+
+Object.keys(config.files.vend_javascripts).forEach(function (key) {
+    shim[config.files.vend_javascripts[key]] = key;
+});
+
+config.files.vend_javascripts = shim;
 
 module.exports = config;

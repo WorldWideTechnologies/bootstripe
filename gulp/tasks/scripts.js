@@ -57,7 +57,7 @@ function buildScript(file, watch) {
     }().transform(babelify, {presets: ["es2015", "stage-0", "react"]}).transform(reactify).transform('browserify-shim');
 
     function rebundle() {
-        var stream = bundler.bundle({debug: true});
+        var stream = bundler.bundle(); //.bundle({debug: true});
         return stream.on('error', handleErrors)
             .pipe(source(file))
             .pipe(gulp.dest(config.dist_javascripts));

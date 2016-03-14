@@ -3,7 +3,8 @@ var _     = require('lodash'),
     sync  = require('browser-sync'),
     gulp  = require('gulp'),
     watch = require('gulp-watch'),
-    argv = require('yargs').argv;
+    argv = require('yargs').argv,
+    buildScriptsTask = require('./gulp/tasks/scripts');
 
 var config = require('./gulp/config');
 if(typeof argv.prod !== 'undefined'){
@@ -15,7 +16,6 @@ gulp.task('clean', require('./gulp/tasks/clean'));
 gulp.task('vendor-styles', require('./gulp/tasks/vendor_styles'));
 gulp.task('styles', require('./gulp/tasks/styles'));
 gulp.task('vendor-scripts', require('./gulp/tasks/vendor_scripts'));
-gulp.task('scripts', require('./gulp/tasks/scripts'));
 gulp.task('images', require('./gulp/tasks/images'));
 gulp.task('fonts', require('./gulp/tasks/fonts'));
 
@@ -31,14 +31,14 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('build', function () {
-    return buildScript('main.js', false);
+gulp.task('scripts', function () {
+    return buildScriptsTask(config.dist_main_js, false);
 });
 
 
-gulp.task('default', ['build'], function () {
-    return buildScript('main.js', true);
-});
+// gulp.task('scripts:watch', ['scripts'], function () {
+//     return buildScriptsTask(config.dist_main_js, true);
+// });
 
 gulp.task('build', gulp.series(
     'bower',
@@ -47,6 +47,9 @@ gulp.task('build', gulp.series(
 ));
 
 gulp.task('default', gulp.series(
-        'build',
-        'watch'
+    'bower',
+    'clean',
+    gulp.parallel('vendor-styles', 'styles', 'vendor-scripts', 'images', 'fonts'),
+    // 'scripts:watch',
+    'watch'
 ));

@@ -6,7 +6,8 @@ var gulp   = require('gulp'),
     uglify = require('gulp-uglify');
 
 module.exports = function () {
-    return gulp.src(Object.values(config.files.vend_javascripts))
+    console.log(config.files.vend_javascripts);
+    return gulp.src(Object.keys(config.files.vend_javascripts))
         .pipe(plumber())
         .pipe(concat(config.vend_main_js))
         .pipe(uglify())
