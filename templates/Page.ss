@@ -11,7 +11,7 @@
     <%--Need to add favicons plugin--%>
 
     <link rel="stylesheet" href="/themes/default/public/css/vendor.css">
-    <link rel="stylesheet" href="/themes/default/public/css/layout.css">
+    <link rel="stylesheet" href="/themes/default/public/css/app.css">
 
     $SiteConfig.CustomHeaderOutput.RAW
 </head>
@@ -27,7 +27,7 @@
 <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
 
 <script src="/themes/default/public/javascript/vendor.js"></script>
-<script src="/themes/default/public/javascript/layout.js"></script>
+<script src="/themes/default/public/javascript/app.js"></script>
 
     $SiteConfig.CustomFooterOutput.RAW
 </body>

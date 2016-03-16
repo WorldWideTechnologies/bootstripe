@@ -1,5 +1,6 @@
 var config = {
     // Source Config
+    src_main_js:      'app.jsx',
     src_images:       './src/images/',                       // Source Images Directory
     src_javascripts:  './src/javascript/',                   // Source Javascripts Directory
     src_stylesheets:  './src/sass/',                         // Source Styles Sheets Directory
@@ -8,7 +9,6 @@ var config = {
     vend_main_js:     'vendor.js',
     vend_main_cdn_js: 'vendor-cdn.js',
     // Destination Config
-    dist_main_js:     'app.js',
     dist_fonts:       './public/fonts/',                            // Destination Fonts Directory
     dist_images:      './public/images/',                           // Destination Images Directory
     dist_javascripts: './public/javascript/',                       // Destination Javascripts Directory

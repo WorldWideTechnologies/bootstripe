@@ -6,5 +6,6 @@
 <div class="row">
     <div class="column small-12">
         {$Content}
+        <div id="react"></div>
     </div>
 </div>

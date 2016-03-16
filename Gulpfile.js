@@ -32,13 +32,13 @@ gulp.task('watch', function () {
 
 
 gulp.task('scripts', function () {
-    return buildScriptsTask(config.dist_main_js, false);
+    return buildScriptsTask(config.src_main_js, false);
 });
 
 
-// gulp.task('scripts:watch', ['scripts'], function () {
-//     return buildScriptsTask(config.dist_main_js, true);
-// });
+gulp.task('scripts:watch', function () {
+    return buildScriptsTask(config.src_main_js, true);
+});
 
 gulp.task('build', gulp.series(
     'bower',
@@ -50,6 +50,6 @@ gulp.task('default', gulp.series(
     'bower',
     'clean',
     gulp.parallel('vendor-styles', 'styles', 'vendor-scripts', 'images', 'fonts'),
-    // 'scripts:watch',
+    'scripts:watch',
     'watch'
 ));
