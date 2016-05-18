@@ -1,0 +1,16 @@
+// ============================================================================
+// Blog Stylesheet
+// ============================================================================
+
+<<<<<<< e49cff8482171e13eb51239cc7375483a6aa1501
+.article-image {
+=======
+@include b(article-image) {
+>>>>>>> Restructure SASS and JS
+  margin-bottom: 15px;
+  @include breakpoint(medium) {
+    max-width: 50%;
+    float: right;
+    margin-left: 15px;
+  }
+}

@@ -1,0 +1,46 @@
+// ============================================================================
+// Overrides
+// ============================================================================
+
+#buorg {
+  background-color: white;
+  padding: 5px;
+  border-bottom: 3px solid red;
+  box-shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.3);
+
+  #buorgclose {
+    top: 5px;
+  }
+}
+
+#ForgotPassword {
+  display: inline-block;
+  margin: 20px 10px;
+}
+
+#__bs_notify__ {
+  top: auto !important;
+  right: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  border-radius: 0 !important;
+}
+<<<<<<< e49cff8482171e13eb51239cc7375483a6aa1501
+
+.breadcrumb {
+  li {
+    &:before {
+      content: '' !important;
+    }
+  }
+}
+
+.w-lightbox-backdrop {
+  z-index: 9000 !important;
+}
+
+.gallery-image {
+  margin-bottom: 15px;
+}
+=======
+>>>>>>> Restructure SASS and JS
