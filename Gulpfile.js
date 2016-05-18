@@ -26,13 +26,13 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('scripts', function () {
-    return buildScriptsTask(config.src_main_js, false);
+gulp.task('scripts', function (done) {
+    return buildScriptsTask(config.src_main_js, false, done);
 });
 
 
-gulp.task('scripts:watch', function () {
-    return buildScriptsTask(config.src_main_js, true);
+gulp.task('scripts:watch', function (done) {
+    return buildScriptsTask(config.src_main_js, true, done);
 });
 
 gulp.task('build', gulp.series(

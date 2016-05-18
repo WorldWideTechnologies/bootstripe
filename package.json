@@ -61,6 +61,10 @@
     "request": "^2.69.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",
-    "yargs": "^3.32.0"
+    "yargs": "^3.32.0",
+    "event-stream": "^3.3.2",
+    "gulp-concat-util": "^0.5.5",
+    "rc-tooltip": "^3.3.2",
+    "vinyl-buffer": "^1.0.0"
   }
 }

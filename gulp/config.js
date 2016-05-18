@@ -1,6 +1,6 @@
 var config = {
     // Source Config
-    src_main_js:      'app.jsx',
+    src_main_js:      ['app.jsx'],
     src_images:       './src/images/',                       // Source Images Directory
     src_javascripts:  './src/javascript/',                   // Source Javascripts Directory
     src_stylesheets:  './src/sass/',                         // Source Styles Sheets Directory
