@@ -2,7 +2,7 @@
 // Blog Stylesheet
 // ============================================================================
 
-.article-image {
+@include b(article-image) {
   margin-bottom: 15px;
   @include breakpoint(medium) {
     max-width: 50%;

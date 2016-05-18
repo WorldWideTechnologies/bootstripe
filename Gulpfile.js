@@ -22,11 +22,6 @@ gulp.task('fonts', require('./gulp/tasks/fonts'));
 // Need a copy task for light gallery fonts
 
 gulp.task('watch', function () {
-    sync({
-        proxy: config.host + ':' + config.port,
-        open:  false,
-        port:  4000
-    });
     gulp.watch(path.join(config.src_stylesheets, '/**/*.scss'), gulp.series('styles'));
 });
 

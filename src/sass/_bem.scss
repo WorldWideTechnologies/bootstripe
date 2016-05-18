@@ -1,0 +1,63 @@
+$es: '__'; // Element
+$ms: '--'; // Modifier
+$ns: 'wf'; // Name space (Set to null if un-wanted)
+
+@if($ns) {
+  $ns: $ns + '-';
+}
+
+@function to-string($selector) {
+  $selector: inspect($selector); //cast to string
+  $selector: str-slice($selector, 2, -2); //remove brackets
+  @return $selector;
+}
+
+@function contains-modifier($selector) {
+  $selector: to-string($selector);
+  @if str-index($selector, $ms) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function get-block($selector) {
+  $selector: to-string($selector);
+  $modifier-start: str-index($selector, $ms) - 1;
+  @return str-slice($selector, 0, $modifier-start);
+}
+
+@mixin b($block) {
+  .#{$ns}#{$block} {
+    @content;
+  }
+}
+
+@mixin e($element) {
+  $selector: &;
+  @if contains-modifier($selector) {
+    $block: get-block($selector);
+    @at-root {
+      #{$selector} {
+        #{$block+$es+$element} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$selector+$es+$element} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin m($modifier) {
+  $selector: &;
+  @at-root {
+    #{$selector+$ms+$modifier} {
+      @content;
+    }
+  }
+}
