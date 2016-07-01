@@ -19,7 +19,7 @@ module.exports = function () {
             includePaths: config.bower,
             errLogToConsole: true
         }))
-        .pipe(autoprefixer({browsers: config.autoprefix}))
+        .pipe(autoprefixer({browsers: config.autoprefix}));
 
 
     if (config.environment == 'prod') {
