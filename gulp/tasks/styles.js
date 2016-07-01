@@ -6,7 +6,7 @@ var gulp         = require('gulp'),
     sync         = require('browser-sync'),
     sass         = require('gulp-sass'),
     sourcemaps   = require('gulp-sourcemaps'),
-    autoprefixer = require('autoprefixer'),
+    autoprefixer = require('gulp-autoprefixer'),
     minify       = require('gulp-cssnano');
 
 module.exports = function () {
@@ -18,8 +18,8 @@ module.exports = function () {
             precision:       10,
             includePaths: config.bower,
             errLogToConsole: true
-        }));
-    //.pipe(autoprefixer(config.autoprefix));
+        }))
+        .pipe(autoprefixer({browsers: config.autoprefix}))
 
 
     if (config.environment == 'prod') {
